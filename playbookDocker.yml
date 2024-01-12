@@ -13,7 +13,9 @@
         - tree
     - name: Start Docker service
       service: name=docker state=started
+    - name: Clone a github repo which has dockerfilr
+      git: repo={{repo_path}} dest={{dest_path}}
     - name: Build the dockerfile
-      command: docker build -t {{image_name}} .
+      command: chdir={{dest_path}} docker build -t {{image_name}} .
     - name: run the image to launch a container
       command: docker run -d -P {{image_name}}
