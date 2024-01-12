@@ -1,4 +1,3 @@
   repo_path: https://github.com/Yash-SI-08/AnsibleDockerdemo.git
    dest_path: /tmp/myrepo
-   image_name: myansible:2
-~                             
+   image_name: myansible:3
